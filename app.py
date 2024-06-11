@@ -30,5 +30,15 @@ def add():
     return render_template("add.html")
 
 
+@app.route("/delete/<post_id>")
+def delete(post_id):
+    for post in posts:
+        if post["id"] == post_id:
+            posts.remove(post)
+            files.save_posts(posts)
+            return redirect(url_for("index"))
+    return "Post not found"
+
+
 if __name__ == "__main__":
     app.run()
