@@ -21,6 +21,7 @@ def add():
             "title": request.form.get("title"),
             "author": request.form.get("author"),
             "content": request.form.get("content"),
+            "likes": 0,
         }
         posts.append(new_post)
         print(posts)
@@ -56,11 +57,22 @@ def update(post_id):
     if request.method == "POST":
         post["title"] = request.form["title"]
         post["author"] = request.form["author"]
-        post['content'] = request.form['content']
+        post["content"] = request.form["content"]
         files.save_posts(posts)
         return redirect(url_for("index"))
     return render_template("update.html", post=post)
 
+
+@app.route("/likes/<post_id>", methods=["GET", "POST"])
+def likes(post_id):
+    if request.method == "POST":
+        post = fetch_post_by_id(post_id)
+        if post is None:
+            return "Post not found", 404
+        post["likes"] += 1
+        files.save_posts(posts)
+        return redirect(url_for("index"))
+    return render_template("index.html", posts=posts)
 
 if __name__ == "__main__":
     app.run()

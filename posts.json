@@ -1,14 +1,23 @@
 [
-  {
-    "id": 1,
-    "author": "John Doe",
-    "title": "First Post",
-    "content": "This is my first post."
-  },
-  {
-    "id": 2,
-    "author": "Jane Doe",
-    "title": "Second Post",
-    "content": "This is another post."
-  }
+    {
+        "id": "59be4025-d6cb-4fb3-aac2-35b022c28852",
+        "author": "John Doe",
+        "title": "First Post",
+        "content": "This is my first post.s",
+        "likes": 23
+    },
+    {
+        "id": "59be4025-d6cb-4fb3-aac2-35b022c28834",
+        "author": "Jane Doe",
+        "title": "Second Post",
+        "content": "This is another post.",
+        "likes": 8
+    },
+    {
+        "id": "fa2f50f7-87f6-4960-98c6-1eac886601ea",
+        "title": "sds",
+        "author": "sds",
+        "content": "sds",
+        "likes": 3
+    }
 ]
