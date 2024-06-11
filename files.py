@@ -5,11 +5,9 @@ FILE_PATH = "posts.json"
 
 def load_posts():
     """
-    Loads movie data from the JSON file and returns it as a list of
-    dictionaries.
-
-    Returns:
-        list: List of movie dictionaries.
+        Load posts from a JSON file.
+        Returns:
+            a list of posts or None if the file is missing.
     """
     try:
         with open(FILE_PATH, "r") as posts_obj:
@@ -21,10 +19,10 @@ def load_posts():
 
 def save_posts(posts):
     """
-    Saves the movie data to the JSON file.
+    Save posts to a JSON file
 
     Args:
-        posts (list): List of movie dictionaries.
+        posts (list): list of posts dictionaries.
     """
     try:
         with open(FILE_PATH, "w") as posts_obj:
